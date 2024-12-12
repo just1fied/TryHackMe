@@ -1,0 +1,112 @@
+# **TCPDump: Commands and Usage**
+
+A collection of useful `tcpdump` commands to analyze and capture network traffic.
+
+---
+
+## **1. Specify the Network Interface**
+```bash
+tcpdump -i eth0
+```
+Captures all traffic on the `eth0` interface.
+
+---
+
+## **2. Save Captured Packets to a File**
+```bash
+tcpdump -i eth0 -w capture.pcap
+```
+Saves captured packets into `capture.pcap` for later analysis.
+
+---
+
+## **3. Read Packets from a File**
+```bash
+tcpdump -r capture.pcap
+```
+Displays the packets saved in `capture.pcap`.
+
+---
+
+## **4. Limit the Number of Captured Packets**
+```bash
+tcpdump -i eth0 -c 10
+```
+Captures only the first 10 packets.
+
+---
+
+## **5. Disable Name Resolution**
+```bash
+tcpdump -i eth0 -n
+```
+Displays numerical IPs and ports instead of resolving hostnames and service names.
+
+---
+
+## **6. Filter Traffic by Host**
+```bash
+tcpdump -i eth0 host 192.168.1.1
+```
+Captures only traffic to or from the host `192.168.1.1`.
+
+---
+
+## **7. Filter Traffic by Port**
+```bash
+tcpdump -i eth0 port 80
+```
+Captures traffic on HTTP port `80`.
+
+---
+
+## **8. Filter Traffic by Protocol**
+```bash
+tcpdump -i eth0 icmp
+```
+Captures only ICMP traffic (e.g., ping packets).
+
+---
+
+## **9. Verbose Output**
+```bash
+tcpdump -i eth0 -v
+```
+Provides more detailed information about the captured packets.
+
+---
+
+## **10. Display Packets in ASCII**
+```bash
+tcpdump -r capture.pcap -A
+```
+Shows the content of the packets in ASCII format (e.g., readable text).
+
+---
+
+## **11. Display Packets in Hexadecimal**
+```bash
+tcpdump -r capture.pcap -xx
+```
+Displays the packets in hexadecimal format for detailed inspection.
+
+---
+
+## **12. Display Packets in Both ASCII and Hex**
+```bash
+tcpdump -r capture.pcap -X
+```
+Shows the packet data in both ASCII and Hex formats.
+
+---
+
+## **Example of Captured Output**
+```text
+10:05:00.123456 IP 192.168.1.2.12345 > 192.168.1.1.80: Flags [S], seq 123456, win 1024, length 0
+```
+
+---
+
+## **How to Use**
+- Copy and paste the commands to analyze traffic on your network.
+- Replace `eth0` or other parameters to match your setup.
